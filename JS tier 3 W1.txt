@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 3px solid black;
+        }
+        th{
+            border: 3px solid black;
+        }
+        td{
+            border: 3px solid black;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table id="result">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Contact</th>
+        </tr>
+    </table>
+    <script>
+        const data = [
+            {
+                "first_name": "A",
+                "last_name": "a",
+                "age": 12,
+                "gender": "male",
+                "address": {
+                    "sub_district": "maggi",
+                    "district": "hoza",
+                    "province": "nibbo"
+                },
+                "contact": {
+                    "mobile": "0333222111",
+                    "email": "Arcmage1@gmail.com"
+                }
+            },
+            {
+                "first_name": "B",
+                "last_name": "b",
+                "age": 34,
+                "gender": "female",
+                "address": {
+                    "sub_district": "maggi",
+                    "district": "hoza",
+                    "province": "nibbo"
+                },
+                "contact": {
+                    "mobile": "0666555444",
+                    "email": "Arcmage2@gmail.com"
+                }
+            },
+            {
+                "first_name": "C",
+                "last_name": "c",
+                "age": 17,
+                "gender": "female",
+                "address": {
+                    "sub_district": "maggi",
+                    "district": "hoza",
+                    "province": "nibbo"
+                },
+                "contact": {
+                    "mobile": "0999888777",
+                    "email": "Arcmage3@gmail.com"              
+                }
+            }
+            ]
+
+            window.onload = ()=>{
+                const show = document.getElementById('result')
+                let str = ''
+                for (let i = 0; i < data.length; i++){
+                    str += `<tr>
+                        <td>${data[i].first_name}</td>
+                        <td>${data[i].last_name}</td>
+                        <td>${data[i].age}</td>
+                        <td>${data[i].gender}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    ${data[i].address.sub_district}
+                                </li>
+                                <li>
+                                    ${data[i].address.district}
+                                </li>
+                                <li>
+                                    ${data[i].address.province}
+                                </li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>
+                                    ${data[i].contact.mobile}
+                                </li>
+                                <li>
+                                    ${data[i].contact.email}
+                                </li>
+                            </ul>
+                        </td>
+                        </tr>`
+                }
+                show.innerHTML += str    
+            }
+            
+    </Script>
+    
+</body>
+</html>
